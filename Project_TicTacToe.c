@@ -128,7 +128,8 @@ void game_rule()
         printf("\n");
         printf("------------------ (Press <Enter> to stat game) ------------------\n");
         printf("\n");
-        while ((response = getchar()) != '\n' && response != EOF);
+        while ((response = getchar()) != '\n' && response != EOF)
+            ;
         scanf("%c", &response);
     }
     else if (mode == CO_OP)
@@ -165,7 +166,8 @@ void game_rule()
         printf("\n");
         printf("------------------ (Press <Enter> to stat game) ------------------\n");
         printf("\n");
-        while ((response = getchar()) != '\n' && response != EOF);
+        while ((response = getchar()) != '\n' && response != EOF)
+            ;
         scanf("%c", &response);
     }
     else
@@ -176,7 +178,6 @@ void game_rule()
         printf("******************************************************************\n");
         printf("\n");
     }
-    
 }
 
 void mode_select()
@@ -679,7 +680,6 @@ void win_check()
             printf("\n");
         }
     }
-    
 }
 
 void tie_check()
@@ -689,7 +689,7 @@ void tie_check()
         bool first_row_full = (board[0][0] != 32 && board[0][1] != 32 && board[0][2] != 32);
         bool second_row_full = (board[1][0] != 32) && (board[1][1] != 32) && (board[1][2] != 32);
         bool third_row_full = (board[2][0] != 32) && (board[2][1] != 32) && (board[2][2] != 32);
-        
+
         if (first_row_full && second_row_full && third_row_full)
         {
             over = Yes;
@@ -773,7 +773,7 @@ void start_game()
             printf("Please type only [ Y / N ]: ");
             scanf(" %c", &response);
             if (toupper(response) == 'Y')
-            {   
+            {
                 over = No;
                 reset_board();
                 printf("\n\n\n");
@@ -791,7 +791,6 @@ void start_game()
             }
         } while (over == Yes);
     } while (over == No);
-    
 }
 
 void end_credit()
