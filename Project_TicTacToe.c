@@ -48,11 +48,10 @@ void reset_board();              // EVALUATED
 void player_move(int, int, int); // EVALUATED
 void show_invalid(int, int);     // EVALUATED
 void ai_move();                  // EVALUATED
-// void win_check(char[], int);     // EVALUATED
 void win_check();                // EVALUATED
 void tie_check();                // EVALUATED
 void over_check();               // EVALUATED
-void start_game();               // CHECKING
+void start_game();               // EVALUATED
 void end_credit();               // EVALUATED
 
 // Structs zone
@@ -60,15 +59,12 @@ typedef char Sentence[50];
 typedef struct
 {
     Sentence Name;
-    int Score, Row, Col;
+    int Row, Col;
     enum sign Sign;
 } Player;
-// Player main_player = {"", 0, 0, 0, None};
-// Player secondary_player = {"", 0, 0, 0, None};
-// Player bot_player = {"", 0, 0, 0, None};
-Player main_player = {"", None};
-Player secondary_player = {"", None};
-Player bot_player = {"", None};
+Player main_player = {"", 0, 0, None};
+Player secondary_player = {"", 0, 0, None};
+Player bot_player = {"", 0, 0, None};
 
 // Main zone
 int main()
@@ -78,139 +74,6 @@ int main()
     mode_select();
     game_rule();
     start_game();
-    // Playing 
-    // while (over == No)
-    // {
-    //     if (mode == Single)
-    //     {
-    //         show_board();
-    //         printf("Enter the new Row: ");
-    //         scanf("%d", &main_player.Row);
-    //         printf("\n");
-    //         printf("Enter the new Column: ");
-    //         scanf("%d", &main_player.Col);
-    //         printf("\n");
-    //         player_move(main_player.Row, main_player.Col, main_player.Sign);
-    //         over_check();
-    //         if (over == No)
-    //         {
-    //             ai_move();
-    //             over_check();
-    //         }
-    //         else if (over == Yes)
-    //         {
-    //             break;
-    //         }
-    //     }
-    //     else if (mode == CO_OP)
-    //     {
-    //         show_board();
-    //         printf("Enter the new Row: ");
-    //         scanf("%d", &main_player.Row);
-    //         printf("\n");
-    //         printf("Enter the new Column: ");
-    //         scanf("%d", &main_player.Col);
-    //         printf("\n");
-    //         player_move(main_player.Row, main_player.Col, main_player.Sign);
-    //         over_check();
-    //         if (over == No)
-    //         {
-    //             show_board();
-    //             printf("Enter the new Row: ");
-    //             scanf("%d", &secondary_player.Row);
-    //             printf("\n");
-    //             printf("Enter the new Column: ");
-    //             scanf("%d", &secondary_player.Col);
-    //             printf("\n");
-    //             player_move(secondary_player.Row, secondary_player.Col, secondary_player.Sign);
-    //             over_check();
-    //         }
-    //         else if (over == Yes)
-    //         {
-    //             break;
-    //         }
-    //     }
-        
-        
-    // }
-    
-    
-    
-    // show_board();
-    // // tie_check();
-    // // printf("\n");
-    // // printf("%d\t%d\t%d\n%d\t%d\t%d\n%d\t%d\t%d\n",board[0][0],board[0][1],board[0][2],board[1][0],board[1][1],board[1][2],board[2][0],board[2][1],board[2][2]);
-    // // printf("\n");
-    
-    // player_move(1, 1, main_player.Sign);
-    // player_move(3, 1, secondary_player.Sign);
-
-    // show_board();
-    // // tie_check();
-    // // printf("\n");
-    // // printf("%d\t%d\t%d\n%d\t%d\t%d\n%d\t%d\t%d\n",board[0][0],board[0][1],board[0][2],board[1][0],board[1][1],board[1][2],board[2][0],board[2][1],board[2][2]);
-    // // printf("\n");
-
-    // player_move(2, 2, secondary_player.Sign);
-    // player_move(3, 3, main_player.Sign);
-    
-    // show_board();
-    // // tie_check();
-    // // printf("\n");
-    // // printf("%d\t%d\t%d\n%d\t%d\t%d\n%d\t%d\t%d\n",board[0][0],board[0][1],board[0][2],board[1][0],board[1][1],board[1][2],board[2][0],board[2][1],board[2][2]);
-    // // printf("\n");
-
-    // player_move(3, 2, main_player.Sign);
-    // player_move(1, 3, secondary_player.Sign);
-
-    // show_board();
-    // // tie_check();
-    // // printf("\n");
-    // // printf("%d\t%d\t%d\n%d\t%d\t%d\n%d\t%d\t%d\n",board[0][0],board[0][1],board[0][2],board[1][0],board[1][1],board[1][2],board[2][0],board[2][1],board[2][2]);
-    // // printf("\n");
-
-    // player_move(2, 3, main_player.Sign);
-    // player_move(1, 2, secondary_player.Sign);
-
-    // show_board();
-    // // tie_check();
-    // // printf("\n");
-    // // printf("%d\t%d\t%d\n%d\t%d\t%d\n%d\t%d\t%d\n",board[0][0],board[0][1],board[0][2],board[1][0],board[1][1],board[1][2],board[2][0],board[2][1],board[2][2]);
-    // // printf("\n");
-
-    // player_move(2, 1, secondary_player.Sign);
-    
-    // show_board();
-    // // tie_check();
-    // // printf("\n");
-    // // printf("%d\t%d\t%d\n%d\t%d\t%d\n%d\t%d\t%d\n",board[0][0],board[0][1],board[0][2],board[1][0],board[1][1],board[1][2],board[2][0],board[2][1],board[2][2]);
-    // // printf("\n");
-
-    // printf("over: %u, mode: %u,sign: %u, process: %u\n", over, mode, player_sign, process);
-
-    // // player_move(1, 1, main_player.Sign);
-    // // player_move(1, 1, secondary_player.Sign);
-    // // show_board();
-
-    // // player_move(1, 1, main_player.Sign);
-    // // player_move(1, 1, secondary_player.Sign);
-    // // show_board();
-    
-    // // player_move(1, 1, main_player.Sign);
-    // // player_move(1, 1, secondary_player.Sign);
-    // // show_board();
-
-    // // player_move(1, 1, main_player.Sign);
-    // // player_move(1, 1, secondary_player.Sign);
-    // // show_board();
-    // // player_move(2, 2, main_player.Sign);
-    // // ai_move(main_player.Sign);
-    // // show_board();
-    // // player_move(3, 3, main_player.Sign);
-    // // ai_move(main_player.Sign);
-    // // show_board();
-    // over_check();
-    // printf("over: %u, mode: %u,sign: %u, process: %u\n", over, mode, player_sign, process);
     end_credit();
 
     return 0;
@@ -313,7 +176,6 @@ void game_rule()
         printf("******************************************************************\n");
         printf("\n");
     }
-    
     
 }
 
@@ -618,213 +480,6 @@ void ai_move()
     }
 }
 
-// void win_check(Sentence player_name, int sign)
-// {
-//     if (mode == Single)
-//     {
-//         int num_board_row, num_board_col, i, j;
-
-//         num_board_row = sizeof(board) / sizeof(board[0]);
-//         num_board_col = sizeof(board[0]) / sizeof(board[0][0]);
-//         i = 0;
-
-//         // Diagonal win
-//         if ((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && (board[0][0] != 32))
-//         {
-//             over = Yes;
-//             if ((sign == X && board[i][0] == 88) || (sign == O && board[i][0] == 79))
-//             {
-//                 printf("*** %s has won! ***\n", player_name);
-//                 printf("\n");
-//             }
-//             else if ((sign == X && board[i][0] == 79) || (sign == O && board[i][0] == 88))
-//             {
-//                 printf("*** AI has won! ***\n");
-//                 printf("\n");
-//             }
-//         }
-//         else if ((board[0][2] == board[1][1] && board[1][1] == board[2][0]) && (board[0][2] != 32))
-//         {
-//             over = Yes;
-//             if ((sign == X && board[i][0] == 88) || (sign == O && board[i][0] == 79))
-//             {
-//                 printf("*** %s has won! ***\n", player_name);
-//                 printf("\n");
-//             }
-//             else if ((sign == X && board[i][0] == 79) || (sign == O && board[i][0] == 88))
-//             {
-//                 printf("*** AI has won! ***\n");
-//                 printf("\n");
-//             }
-//         }
-//         else if (over == No)
-//         {
-//             while (over == No && i < num_board_row)
-//             {
-//                 j = 0;
-
-//                 while (j < num_board_col)
-//                 {
-//                     // Column win
-//                     if ((board[i][0] == board[i][1] && board[i][1] == board[i][2]) && (board[i][0] != 32))
-//                     {
-//                         over = Yes;
-//                         if ((sign == X && board[i][0] == 88) || (sign == O && board[i][0] == 79))
-//                         {
-//                             printf("*** %s has won! ***\n", player_name);
-//                             printf("\n");
-//                             break;
-//                         }
-//                         else if ((sign == X && board[i][0] == 79) || (sign == O && board[i][0] == 88))
-//                         {
-//                             printf("*** AI has won! ***\n");
-//                             printf("\n");
-//                             break;
-//                         }
-//                     }
-
-//                     // Row win
-//                     if ((board[0][j] == board[1][j] && board[1][j] == board[2][j]) && (board[0][j] != 32))
-//                     {
-//                         over = Yes;
-//                         if ((sign == X && board[0][j] == 88) || (sign == O && board[0][j] == 79))
-//                         {
-//                             printf("*** %s has won! ***\n", player_name);
-//                             printf("\n");
-//                             break;
-//                         }
-//                         else if ((sign == X && board[0][j] == 79) || (sign == O && board[0][j] == 88))
-//                         {
-//                             printf("*** AI has won! ***\n");
-//                             printf("\n");
-//                             break;
-//                         }
-//                     }
-
-//                     j++;
-//                 }
-//                 i++;
-//             }
-//             if (over == No)
-//             {
-//                 over = Yes;
-//                 printf("*** The game is Tie! ***\n");
-//                 printf("\n");
-//             }
-//         }
-//         else
-//         {
-//             printf("\n");
-//             printf("******************************************************************\n");
-//             printf("ERROR : win_check(int sign)\n");
-//             printf("******************************************************************\n");
-//             printf("\n");
-//         }
-//     }
-//     else if (mode == CO_OP)
-//     {
-//         int num_board_row, num_board_col, i, j;
-
-//         num_board_row = sizeof(board) / sizeof(board[0]);
-//         num_board_col = sizeof(board[0]) / sizeof(board[0][0]);
-//         i = 0;
-
-//         // Diagonal win
-//         if ((board[0][0] == board[1][1] && board[1][1] == board[2][2]) && (board[0][0] != 32))
-//         {
-//             over = Yes;
-//             if ((sign == X && board[i][0] == 88) || (sign == O && board[i][0] == 79))
-//             {
-//                 printf("*** %s has won! ***\n", player_name);
-//                 printf("\n");
-//             }
-//             else if ((sign == X && board[i][0] == 79) || (sign == O && board[i][0] == 88))
-//             {
-//                 printf("*** AI has won! ***\n");
-//                 printf("\n");
-//             }
-//         }
-//         else if ((board[0][2] == board[1][1] && board[1][1] == board[2][0]) && (board[0][2] != 32))
-//         {
-//             over = Yes;
-//             if ((sign == X && board[i][0] == 88) || (sign == O && board[i][0] == 79))
-//             {
-//                 printf("*** %s has won! ***\n", player_name);
-//                 printf("\n");
-//             }
-//             else if ((sign == X && board[i][0] == 79) || (sign == O && board[i][0] == 88))
-//             {
-//                 printf("*** AI has won! ***\n");
-//                 printf("\n");
-//             }
-//         }
-//         else if (over == No)
-//         {
-//             while (over == No && i < num_board_row)
-//             {
-//                 j = 0;
-
-//                 while (j < num_board_col)
-//                 {
-//                     // Column win
-//                     if ((board[i][0] == board[i][1] && board[i][1] == board[i][2]) && (board[i][0] != 32))
-//                     {
-//                         over = Yes;
-//                         if ((sign == X && board[i][0] == 88) || (sign == O && board[i][0] == 79))
-//                         {
-//                             printf("*** %s has won! ***\n", player_name);
-//                             printf("\n");
-//                             break;
-//                         }
-//                         else if ((sign == X && board[i][0] == 79) || (sign == O && board[i][0] == 88))
-//                         {
-//                             printf("*** AI has won! ***\n");
-//                             printf("\n");
-//                             break;
-//                         }
-//                     }
-
-//                     // Row win
-//                     if ((board[0][j] == board[1][j] && board[1][j] == board[2][j]) && (board[0][j] != 32))
-//                     {
-//                         over = Yes;
-//                         if ((sign == X && board[0][j] == 88) || (sign == O && board[0][j] == 79))
-//                         {
-//                             printf("*** %s has won! ***\n", player_name);
-//                             printf("\n");
-//                             break;
-//                         }
-//                         else if ((sign == X && board[0][j] == 79) || (sign == O && board[0][j] == 88))
-//                         {
-//                             printf("*** AI has won! ***\n");
-//                             printf("\n");
-//                             break;
-//                         }
-//                     }
-
-//                     j++;
-//                 }
-//                 i++;
-//             }
-//             if (over == No)
-//             {
-//                 over = Yes;
-//                 printf("*** The game is Tie! ***\n");
-//                 printf("\n");
-//             }
-//         }
-//         else
-//         {
-//             printf("\n");
-//             printf("******************************************************************\n");
-//             printf("ERROR : win_check(int sign)\n");
-//             printf("******************************************************************\n");
-//             printf("\n");
-//         }
-//     }
-    
-// }
-
 void win_check()
 {
     if (mode == Single)
@@ -915,13 +570,6 @@ void win_check()
                 }
                 i++;
             }
-            // if (over == No && i == 2)
-            // {
-            //     over = Yes;
-            //     show_board();
-            //     printf("*** The game is Tie! ***\n");
-            //     printf("\n");
-            // }
         }
         else
         {
@@ -1021,21 +669,7 @@ void win_check()
                 }
                 i++;
             }
-            // if (over == No && i == 2)
-            // {
-            //     over = Yes;
-            //     show_board();
-            //     printf("*** The game is Tie! ***\n");
-            //     printf("\n");
-            // }
         }
-        // else if (over == No && i == 2)
-        // {
-        //     over = Yes;
-        //     show_board();
-        //     printf("*** The game is Tie! ***\n");
-        //     printf("\n");
-        // }
         else
         {
             printf("\n");
@@ -1074,58 +708,90 @@ void over_check()
 
 void start_game()
 {
-    while (over == No)
+    char response;
+
+    do
     {
-        if (mode == Single)
+        while (over == No)
         {
-            show_board();
-            printf("Enter the new Row: ");
-            scanf("%d", &main_player.Row);
-            printf("\n");
-            printf("Enter the new Column: ");
-            scanf("%d", &main_player.Col);
-            printf("\n");
-            player_move(main_player.Row, main_player.Col, main_player.Sign);
-            over_check();
-            if (over == No)
-            {
-                ai_move();
-                over_check();
-            }
-            else if (over == Yes)
-            {
-                break;
-            }
-        }
-        else if (mode == CO_OP)
-        {
-            show_board();
-            printf("Enter the new Row: ");
-            scanf("%d", &main_player.Row);
-            printf("\n");
-            printf("Enter the new Column: ");
-            scanf("%d", &main_player.Col);
-            printf("\n");
-            player_move(main_player.Row, main_player.Col, main_player.Sign);
-            over_check();
-            if (over == No)
+            if (mode == Single)
             {
                 show_board();
                 printf("Enter the new Row: ");
-                scanf("%d", &secondary_player.Row);
+                scanf("%d", &main_player.Row);
                 printf("\n");
                 printf("Enter the new Column: ");
-                scanf("%d", &secondary_player.Col);
+                scanf("%d", &main_player.Col);
                 printf("\n");
-                player_move(secondary_player.Row, secondary_player.Col, secondary_player.Sign);
+                player_move(main_player.Row, main_player.Col, main_player.Sign);
                 over_check();
+                if (over == No)
+                {
+                    ai_move();
+                    over_check();
+                }
+                else if (over == Yes)
+                {
+                    break;
+                }
             }
-            else if (over == Yes)
+            else if (mode == CO_OP)
             {
-                break;
+                show_board();
+                printf("Enter the new Row: ");
+                scanf("%d", &main_player.Row);
+                printf("\n");
+                printf("Enter the new Column: ");
+                scanf("%d", &main_player.Col);
+                printf("\n");
+                player_move(main_player.Row, main_player.Col, main_player.Sign);
+                over_check();
+                if (over == No)
+                {
+                    show_board();
+                    printf("Enter the new Row: ");
+                    scanf("%d", &secondary_player.Row);
+                    printf("\n");
+                    printf("Enter the new Column: ");
+                    scanf("%d", &secondary_player.Col);
+                    printf("\n");
+                    player_move(secondary_player.Row, secondary_player.Col, secondary_player.Sign);
+                    over_check();
+                }
+                else if (over == Yes)
+                {
+                    break;
+                }
             }
         }
-    }
+        do
+        {
+            printf("\n");
+            printf("******************************************************************\n");
+            printf("Do you want to try again?.\n");
+            printf("******************************************************************\n");
+            printf("Please type only [ Y / N ]: ");
+            scanf(" %c", &response);
+            if (toupper(response) == 'Y')
+            {   
+                over = No;
+                reset_board();
+                printf("\n\n\n");
+                break;
+            }
+            else if (toupper(response) == 'N')
+            {
+                printf("\n\n\n");
+                break;
+            }
+            else
+            {
+                printf("\n");
+                printf("******* Please type the valid characters between [ Y / N ] *******\n");
+            }
+        } while (over == Yes);
+    } while (over == No);
+    
 }
 
 void end_credit()
